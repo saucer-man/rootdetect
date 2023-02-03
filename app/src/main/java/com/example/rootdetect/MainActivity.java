@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.rootdetect.databinding.ActivityMainBinding;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Example of a call to a native method
         TextView tv = binding.sampleText;
-        tv.setText(stringFromJNI());
+        // tv.setText(stringFromJNI());
+
+
+
+        boolean deviceRoot = CheckRoot.isDeviceRooted();
+        tv.setText("Device Root：" +deviceRoot);
     }
 
     /**
